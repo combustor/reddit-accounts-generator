@@ -22,17 +22,17 @@ def create_account():
     browser.find_element_by_id('regEmail').send_keys("email@email.com")
     browser.find_element_by_css_selector('button.AnimatedForm__submitButton:nth-child(1)').click() 
     #clicks the submit button
-    time.sleep(randint(1,5))
+    time.sleep(randint(1,3))
 
     random_name = browser.find_element_by_class_name('Onboarding__usernameSuggestion').text
-    #now the account insertion
+    #now the account insertion into the .txt file
     with open("created_accounts.txt", "r+") as crack:
         crack.write(" " + random_name)
 
     browser.find_element_by_css_selector('a.Onboarding__usernameSuggestion:nth-child(1)').click() 
     #chooses the first random username
     #insert password
-    time.sleep(randint(1,5))
+    time.sleep(randint(1,2))
     browser.find_element_by_id('regPassword').click()
     browser.find_element_by_id('regPassword').send_keys("WRITEYOURPASSWORDHERE")
 
