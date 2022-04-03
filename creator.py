@@ -8,11 +8,6 @@ import time
 import os
 
 
-
-userNamePasswordFile = 'redditNameList.txt'
-createdUserNamePasswordFile = 'createdNames.txt'
-
-
 def create_account():
     #set up profile for proxy
     profile = webdriver.FirefoxProfile()
