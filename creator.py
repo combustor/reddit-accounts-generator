@@ -10,26 +10,36 @@ from selenium.common.exceptions import ElementNotVisibleException
 from random import randint
 import time 
 import os
+import random
 import polling2 as polli
-import geckodriver_autoinstaller
+from selenium.webdriver.common.proxy import Proxy, ProxyType
 
-geckodriver_autoinstaller.install() 
+firefox_capabilities = webdriver.DesiredCapabilities.FIREFOX
+firefox_capabilities['marionette'] = True
+def proxy_change():
+    line = open('proxy.txt').read().splitlines()
+    proxy = random.choice(line)
+    print("now using " + proxy)
+    firefox_capabilities['proxy'] = {
+    "proxyType": "MANUAL",
+    "sslProxy": proxy
+    }
+proxy_change()
+browser = webdriver.Firefox(capabilities=firefox_capabilities)
 
-profile = webdriver.FirefoxProfile()
-browser = webdriver.Firefox(firefox_profile=profile)
 
 def test(): #polls until it finds something, essential for account detection process
     if browser.find_element_by_css_selector('.SubredditPicker__subreddits').is_displayed():
         browser.quit()
+        time.sleep(randint(5,15))
+        print("Starting new instance")
+        proxy_change()
         create_account()
-
     else:
-        print("waiting")
+        print("Waiting for captcha to be solved")
+
     
 def create_account():
-    #set up profile for proxy
-    
-
     #get reddit account creation page
     browser.set_window_size(683, 744)
     browser.get('http://reddit.com/account/register/')
@@ -58,10 +68,6 @@ def create_account():
     #account creation detection
     polli.poll(lambda: test(),step=1, timeout=120)
     
-
-   
-
-  
 
 
 create_account()
