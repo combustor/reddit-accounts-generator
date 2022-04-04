@@ -1,7 +1,7 @@
 
 # An extremely simple python program that creates reddit accounts
 (Note: it still needs the user to do the captcha)
-### Uses geckodriver (firefox)
+### Uses geckodriver (firefox) and HTTPS proxies
 ## How to use
 
 Download it/clone repo
@@ -14,6 +14,8 @@ type ```` pip3 install -r requirements.txt ````
 
 and click enter
 
+add HTTPS proxies to proxy.txt
+
 open creator.py in a text editor/notepad and change your default email and default password.  Save the file and then type in the command line ```py creator.py``` or ```` python3 creator.py````. 
 
 
@@ -23,7 +25,7 @@ and it'll run
 
 ## TODO:
 
-1.Proxy or Tor implementation
+1.Proxy or Tor implementation (done)
 
 2.maybe make it faster?
 
