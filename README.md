@@ -9,8 +9,14 @@ Download it/clone repo
 extract file to a spare folder
 
 open said folder and open a CMD in it
-type ```pip install selenium``` click enter, then  type ```pip install polling2``` and click enter
-type ```py creator.py``` and it'll run
+type ```` pip3 install -r requirements.txt ````
+
+and click enter
+
+open creator.py in a text editor/notepad and change your default email and default password.  Save the file and then type in the command line ```py creator.py``` or ```` python3 creator.py````. 
+
+
+and it'll run
 
 ## TODO:
 
