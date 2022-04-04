@@ -1,7 +1,7 @@
 
 # An extremely simple python program that creates reddit accounts
 (Note: it still needs the user to do the captcha)
-Needs Selenium (pip install Selenium) and geckodriver (firefox)
+### Needs Selenium and polling2 (pip install Selenium) (pip install polling2) and geckodriver (firefox)
 ### How to use
 
 Download it/clone repo
