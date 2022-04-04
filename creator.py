@@ -31,7 +31,7 @@ browser = webdriver.Firefox(capabilities=firefox_capabilities)
 def test(): #polls until it finds something, essential for account detection process
     if browser.find_element_by_css_selector('.SubredditPicker__subreddits').is_displayed():
         browser.quit()
-        time.sleep(randint(5,15))
+        time.sleep(randint(1,2))
         print("Starting new instance")
         proxy_change()
         create_account()
