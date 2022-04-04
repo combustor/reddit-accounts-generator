@@ -9,8 +9,10 @@ Download it/clone repo
 extract file to a spare folder
 
 open said folder and open a CMD in it
-type ```pip install -r requirements.txt ```
-type ```py creator.py``` and it'll run
+
+type ```pip install -r requirements.txt ``` then enter
+
+after it's downlaoded type ```py creator.py``` and it'll run
 
 ## TODO:
 
