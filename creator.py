@@ -11,7 +11,9 @@ from random import randint
 import time 
 import os
 import polling2 as polli
+import geckodriver_autoinstaller
 
+geckodriver_autoinstaller.install() 
 
 profile = webdriver.FirefoxProfile()
 browser = webdriver.Firefox(firefox_profile=profile)
